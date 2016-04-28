@@ -371,13 +371,13 @@ class GTP_game:
                     break
                 else:
                     self.moves.append(move)
+                    self.whiteplayer.black(move)
                     if string.lower(move[:4]) == "pass":
                         passes = passes + 1
                         if verbose >= 1:
                             print "Black passes"
                     else:
                         passes = 0
-                        self.whiteplayer.black(move)
                         if verbose >= 1:
                             print "Black plays " + move
                 to_play = "W"
@@ -394,13 +394,13 @@ class GTP_game:
                     break
                 else:
                     self.moves.append(move)
+                    self.blackplayer.white(move)
                     if string.lower(move[:4]) == "pass":
                         passes = passes + 1
                         if verbose >= 1:
                             print "White passes"
                     else:
                         passes = 0
-                        self.blackplayer.white(move)
                         if verbose >= 1:
                             print "White plays " + move
                 to_play = "B"
